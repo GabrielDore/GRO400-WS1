@@ -8,8 +8,14 @@ def is_vowel(letter):
     assert(len(letter) == 1)
     return letter.lower() in ['a', 'e', 'i', 'o', 'u', 'y']
 
+def starts_w_vowel(word):
+    if is_vowel(word[0]):
+        return True
+    else:
+        return False
+
 if __name__ == "__main__":
 
     words = full_text.split()
-
-
+    words_vowel = [x for x in words if starts_w_vowel(x)]
+    print("Words that start with a vowel:", len(words_vowel))
